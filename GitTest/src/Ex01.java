@@ -7,6 +7,7 @@ public class Ex01 {
 		System.out.println("박예은");
 		System.out.println("김태경");
 		
+		System.out.println("팀원1 두번째 커밋!");
 	}
 
 }
