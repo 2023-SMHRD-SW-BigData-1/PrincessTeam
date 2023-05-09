@@ -8,7 +8,7 @@ public class Ex03 {
 		System.out.println("ae;wofiha;weofh");
 
 		
-
+		System.out.println("faefae");
 		
 	}
 
