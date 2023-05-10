@@ -3,8 +3,10 @@ package View;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import yean.GameDAO;
-import yean.GameDTO;
+import DAO.GameDAO;
+import DTO.GameDTO;
+
+
 
 public class Game_main {
 

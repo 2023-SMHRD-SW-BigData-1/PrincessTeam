@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import yean.GameDTO;
+import DTO.GameDTO;
+
+
 
 public class GameDAO {
 	// 공통 필드
