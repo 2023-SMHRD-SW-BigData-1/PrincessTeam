@@ -86,7 +86,6 @@ public class Game_main {
 
 			for (int i = 0; i < dtoList.size(); i++) {
 
-				System.out.print(dtoList.get(i).getRn() + "\t ");
 				System.out.print(dtoList.get(i).getId() + "\t ");
 				System.out.print(dtoList.get(i).getScore() + "\t ");
 				System.out.println();

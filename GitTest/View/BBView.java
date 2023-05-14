@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import DAO.BBDAO;
+import DAO.GameDAO;
 import DTO.BBDTO;
+import DTO.GameDTO;
 
 public class BBView {
 
@@ -17,6 +19,7 @@ public class BBView {
 //		실행공간
 		Scanner sc = new Scanner(System.in);
 		BBDAO dao = new BBDAO();
+		GameDAO yedao = new GameDAO();
 		System.out.println("'공'주는 야구 공주팀" );
 		System.out.println("\r\n"
 				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
@@ -61,6 +64,7 @@ public class BBView {
 			System.out.println
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
+		ArrayList<GameDTO> toList = yedao.selectAllMember();
 
 		System.out.println();
 		

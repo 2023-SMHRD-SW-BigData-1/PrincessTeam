@@ -67,7 +67,7 @@ public class GameDAO {
 				
 				ArrayList<GameDTO> dtoList = new ArrayList<>();
 				
-				String sql = "select rownum, x.* from (select * from table1 t order by score) x";
+				String sql = "select rownum, x.* from (select * from MEMBER_INFO_BB t order by SCORE) x";
 				getConn();
 
 				try {
@@ -77,14 +77,11 @@ public class GameDAO {
 
 					while (rs.next()) {
 						
-						int s_rn = rs.getInt(1);
-						String s_id = rs.getString(2);
-						String s_pw = rs.getString(3);
-						int s_TO = rs.getInt(4);
-						int s_TA = rs.getInt(5);
-						int s_score = rs.getInt(6);
+						String s_id = rs.getString(1);
+						String s_pw = rs.getString(2);
+						int s_score = rs.getInt(3);
 						
-						mdto = new GameDTO(s_rn, s_id, s_pw, s_TO, s_TA, s_score);
+						mdto = new GameDTO(s_id, s_pw, s_score);
 						
 						dtoList.add(mdto);
 					

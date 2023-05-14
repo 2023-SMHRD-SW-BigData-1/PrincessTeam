@@ -1,22 +1,15 @@
 package DTO;
 
 public class GameDTO {
-	private int rn;
 	private String id;
 	private String pw;
-	
-	private int TO;
-	private int TA;
 	private int score;
 
 	
-	public GameDTO(int rn, String id, String pw, int tO, int tA, int score) {
+	public GameDTO(String id, String pw, int score) {
 		super();
-		this.rn = rn;
 		this.id = id;
 		this.pw = pw;
-		TO = tO;
-		TA = tA;
 		this.score = score;
 	}
 
@@ -25,11 +18,6 @@ public class GameDTO {
 	
 
 
-
-
-	public int getRn() {
-		return rn;
-	}
 
 
 
@@ -44,14 +32,7 @@ public class GameDTO {
 	}
 
 
-	public int getTO() {
-		return TO;
-	}
 
-
-	public int getTA() {
-		return TA;
-	}
 
 
 	public int getScore() {
@@ -69,14 +50,7 @@ public class GameDTO {
 	}
 
 
-	public void setTO(int tO) {
-		TO = tO;
-	}
 
-
-	public void setTA(int tA) {
-		TA = tA;
-	}
 
 
 	public void setScore(int score) {
