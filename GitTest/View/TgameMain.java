@@ -1,4 +1,5 @@
 package View;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,7 +13,6 @@ import DTO.BBDTO;
 import DTO.GameDTO;
 import DTO.playerDTO;
 
-
 public class TgameMain {
 
 	public static void main(String[] args) {
@@ -20,12 +20,12 @@ public class TgameMain {
 		Random rd = new Random();
 		int num = 0; // 5명 선발시 무작위 번호
 		int cnt = 0; // 5명까지 선발
-		int TARd = 0; // 게임 시작 후 선수 5명 중 무작위 선택 
+		int TARd = 0; // 게임 시작 후 선수 5명 중 무작위 선택
 		int TORd = 0; // 투수 5명 중 랜덤
 		ArrayList<playerDTO> player = new ArrayList<>();
 		ArrayList<playerDTO> TA = new ArrayList<>();
 		ArrayList<playerDTO> TO = new ArrayList<>();
-		/*수정*/
+		/* 수정 */
 		player.add(new playerDTO("*김태경*", 1));
 		player.add(new playerDTO("*개복치*", 2));
 		player.add(new playerDTO("*잉어킹*", 3));
@@ -163,8 +163,8 @@ public class TgameMain {
 
 		BBDAO dao = new BBDAO();
 		GameDAO yedao = new GameDAO();
-		
-		System.out.println("'공'주는 야구 공주팀" );
+
+		System.out.println("'공'주는 야구 공주팀");
 		System.out.println("\r\n"
 				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
 				+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -198,27 +198,24 @@ public class TgameMain {
 				+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ⠀⠀⣽⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⣿⣿⣯⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 				+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ⠀⠀⣠⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀\r\n"
 				+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ⠀⠀⠀⠀⠀⠀⠀⠙⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀\r\n"
-				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
-				);
+				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n");
 		System.out.println("====순위====");
-		System.out.println("ID"+"\t"+"랭킹"); 
-		
+		System.out.println("ID" + "\t" + "랭킹");
+
 		ArrayList<BBDTO> dtoList = dao.selectAllMember();
 		for (int i = 0; i < dtoList.size(); i++) {
-			System.out.println
-			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
-			}
-		
+			System.out.println(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
+		}
 
 		System.out.println();
-		
+
 		while (true) {
-			System.out.println("[1]회원가입 [2]로그인 [3]검색");
+			System.out.println("[1] 회원가입 [2] 로그인 [3] 게임 종료");
 			int input = sc.nextInt();
-			
-			if(input == -1) {
+
+			if (input == -1) {
 				System.out.println("[1]강퇴[2]돌아가기");
-				while(true) {
+				while (true) {
 					int mng = sc.nextInt();
 					System.out.println("탈퇴 ID : ");
 					if (mng == 2) {
@@ -230,10 +227,10 @@ public class TgameMain {
 							System.out.println("Delete Success");
 						} else {
 							System.out.println("Delete fail");
-						}//else
-					}//else
-				}//while
-			}//if
+						} // else
+					} // else
+				} // while
+			} // if
 			/*************** 회원가입 ****************/
 			if (input == 1) {
 				System.out.print("ID 입력 : ");
@@ -246,11 +243,11 @@ public class TgameMain {
 				int row = dao.join(mdto);
 
 				if (row > 0) {
-					System.out.println("Join succ");
+					System.out.println("회원 가입을 축하드립니다 !");
 				} else {
-					System.out.println("Join fail");
+					System.out.println("회원가입에 실패했습니다.");
 				} // else
-				
+
 			} else if (input == 2) {/*************** 로그인 ****************/
 				// 1. 사용자로부터 ID,PW 입력받기
 				System.out.print("로그인 ID : ");
@@ -259,396 +256,352 @@ public class TgameMain {
 				String pw = sc.next();
 				BBDTO mdto = dao.login(id, pw);
 				if (mdto != null) {
-					System.out.println("Login Success");
-					
-					
-					
-					
-					
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		System.out.println("당신의 운을 시험하세요! 선수 뽑는 중...");
-		System.out.println();
+					try {
+						System.out.println();
+						TimeUnit.SECONDS.sleep(1);
+						System.out.println(id + " 님, 레트로 야구 게임의 세게에 오신 것을 환영합니다 !! ");
+						System.out.println();
 
-		try {
-			TimeUnit.SECONDS.sleep(1);
-			System.out.println("뽑기 완료 ! 당신의 팀은...");
-			System.out.println();
+						TimeUnit.SECONDS.sleep(1);
 
-			for (int i = 0; i < 5; i++) {
-				if (TA.get(i).getPower() <= 5) {
-					TimeUnit.SECONDS.sleep(1);
-					System.out.println("!!!!!!!! *히든 선수* 등장 !!!!!!!!");
-					break;
-				}
-			}
-			System.out.println();
-			
-			TimeUnit.SECONDS.sleep(1);
-			System.out.println("   이름 " + " " + "( 능력치 )");
-			System.out.println("=================");
-			for (int i = 0; i < TA.size(); i++) {
-				System.out.println(i+1 + ". " + TA.get(i).getName() + " ( " + TA.get(i).getPower() + " )");
-			}
-			System.out.println("=================");
+						System.out.println("바로 시작합니다 !");
+						System.out.println();
 
-			System.out.println();
-			
-			TimeUnit.SECONDS.sleep(1);
-			System.out.print("게임을 시작할까요? (y/n) : ");
-			
+						TimeUnit.SECONDS.sleep(1);
 
+						System.out.println("당신의 운을 시험하세요! 선수 뽑는 중...");
+						System.out.println();
 
-		String userAns = sc.next();
+						TimeUnit.SECONDS.sleep(1);
+						System.out.println("뽑기 완료 ! 당신의 팀은...");
+						System.out.println();
 
+						for (int i = 0; i < 5; i++) {
+							if (TA.get(i).getPower() <= 5) {
+								TimeUnit.SECONDS.sleep(1);
+								System.out.println("!!!!!!!! *히든 선수* 등장 !!!!!!!!");
+								break;
+							}
+						}
+						System.out.println();
 
-		System.out.println();
-		
-		if (userAns.equals("y") || userAns.equals("Y") || userAns.equals("ㅛ")) {
-		} else if (userAns.equals("n") || userAns.equals("N") || userAns.equals("ㅜ")) {
-			System.out.println("거절은 거절합니다");
-		} else {
-			System.out.println("당신은 내 말을 전혀 듣지 않고 있군요...");
-		}
-			
-		TimeUnit.SECONDS.sleep(1);
-		System.out.println("< 게임을 시작합니다 >");
-		
-		int score = 0;
-		int lose = 0;
-		int num1 = 1;
-		int st = 0;
-		int G = 0;
-		int powerUp = 1;
-		int speedUp = 2;
-		int concenUp = 3;
-		
-		while (true) {
-			if( score < 10) {
-				
-				
-				
-				TimeUnit.SECONDS.sleep(1);
-				
-				System.out.println();
+						TimeUnit.SECONDS.sleep(1);
+						System.out.println("   이름 " + " " + "( 능력치 )");
+						System.out.println("=================");
+						for (int i = 0; i < TA.size(); i++) {
+							System.out
+									.println(i + 1 + ". " + TA.get(i).getName() + " ( " + TA.get(i).getPower() + " )");
+						}
+						System.out.println("=================");
 
-				System.out.println(num1++ + "번째 게임입니다 !");
-				
-				System.out.println();
-				
-				TARd = rd.nextInt(5);
-				TORd = rd.nextInt(5);
-				
-				TimeUnit.SECONDS.sleep(1);
-				System.out.println("상대 투수는 < " + TO.get(TORd).getName() + " > 입니다");
-				
-				TimeUnit.MILLISECONDS.sleep(500);
-				if(TO.get(TORd).getPower() >= 80) {
-					int menRd = rd.nextInt(3);
-					if (menRd == 0) {
-						System.out.println(" * 상당히 강한 선수들 중에 한명입니다");
-					} else if (menRd == 1) {
-						System.out.println(" * 이 선수 오늘 컨디션이 상당히 좋아보입니다");
-					} else if (menRd == 2) {
-						System.out.println(" * 자신감이 넘치는 모습입니다");
-					}
-				} else if (TO.get(TORd).getPower() <= 20) {
-					int menRd = rd.nextInt(3);
-					if (menRd == 0) {
-						System.out.println(" * 기대에 못미치는 플레이를 선보이는 선수입니다");
-					} else if (menRd == 1) {
-						System.out.println(" * 어딘가 지쳐보이는 건 기분 탓일까요");
-					} else if (menRd == 2) {
-						System.out.println(" * 오늘 컨디션이 좋아보이지는 않습니다...");
-					}
-				}
-				
-				System.out.println();
-				
-				TimeUnit.SECONDS.sleep(1);
-				System.out.print("이에 맞서는 타자는 ");
-				TimeUnit.MILLISECONDS.sleep(200);
-				System.out.print(".");
-				TimeUnit.MILLISECONDS.sleep(200);
-				System.out.print(".");
-				TimeUnit.MILLISECONDS.sleep(200);
-				System.out.print(".");
-				TimeUnit.MILLISECONDS.sleep(200);
-				System.out.println(" < " + TA.get(TARd).getName() + " > 선수 !");
-				
-				if(TA.get(TARd).getPower() >= 80) {
-					int menRd = rd.nextInt(3);
-					if (menRd == 0) {
-						System.out.println(" * 배트에 힘이 잔뜩 들어가 있습니다");
-					} else if (menRd == 1) {
-						System.out.println(" * 한창 상승세를 타고 있는 선수입니다");
-					} else if (menRd == 2) {
-						System.out.println(" * 기대되는 선수입니다");
-					}
-				} else if (TA.get(TARd).getPower() <= 20) {
-					int menRd = rd.nextInt(3);
-					if (menRd == 0) {
-						System.out.println(" * 기대에 못미치는 플레이를 선보이는 선수입니다");
-					} else if (menRd == 1) {
-						System.out.println(" * 어딘가 지쳐보이는 건 기분 탓일까요");
-					} else if (menRd == 2) {
-						System.out.println(" * 오늘 컨디션이 좋아보이지는 않습니다...");
-					}
-				}
-				System.out.println();
-				
-				
-				
-					
+						System.out.println();
 
-					System.out.println("1. 계속 진행    2. 인벤토리 열기 (타자 능력치) ");
-				
-				int userAns3 = sc.nextInt();
-				
-				while(true) {
-					if (userAns3 == 1) {
-						break;
-					}else if( userAns3 == 2) {
-						System.out.println("1. 파워포션 : (" + powerUp + "/1)" + " 2. 속도포션 : (" + speedUp + "/2)" + " 3. 집중력포션 : (" + concenUp + "/3)");
-					
-						int userAns4 = sc.nextInt();
-						
-						if (userAns4 == 1 && powerUp != 0) {
-							System.out.println("파워포션을 사용합니다. 온 몸에 힘이 넘칩니다.");
-							powerUp--;
-							TA.get(TARd).setPower(TA.get(TARd).getPower()+80);
-							break;
-						} else if ( userAns4 == 2 && speedUp != 0) {
-							System.out.println("속도포션을 사용합니다. 몸이 가벼워집니다.");
-							speedUp--;
-							TA.get(TARd).setPower(+50);
-							break;
-						} else if (userAns4 == 3 && concenUp != 0) {
-							System.out.println("집중력포션을 사용합니다. 시간이 느려진 것 같습니다.");
-							TA.get(TARd).setPower(+30);
-							concenUp--;
-							break;
+						TimeUnit.SECONDS.sleep(1);
+						System.out.print("게임을 시작할까요? (y/n) : ");
+
+						String userAns = sc.next();
+
+						System.out.println();
+
+						if (userAns.equals("y") || userAns.equals("Y") || userAns.equals("ㅛ")) {
+						} else if (userAns.equals("n") || userAns.equals("N") || userAns.equals("ㅜ")) {
+							System.out.println("거절은 거절합니다");
 						} else {
-							System.out.println("잘못 입력하셨습니다. 다시 선택하세요.");
+							System.out.println("당신은 내 말을 전혀 듣지 않고 있군요...");
 						}
-				
-				}
-				}
-				
-				TimeUnit.SECONDS.sleep(1);
-				System.out.println("투수 와인드 - 업");
-				TimeUnit.SECONDS.sleep(1);
-				System.out.println();
-				
-				
-				int taAbil = TA.get(TARd).getPower();
-				int toAbil = TO.get(TORd).getPower();
-				
-			if (taAbil > toAbil) {
-				if (taAbil - toAbil >= 70) {
-					TimeUnit.MILLISECONDS.sleep(100);
-					System.out.print(" !!");
-					TimeUnit.MILLISECONDS.sleep(100);
-					System.out.print("!!");
-					TimeUnit.MILLISECONDS.sleep(100);
-					System.out.print("!!");
-					TimeUnit.MILLISECONDS.sleep(100);
-					System.out.println("!!");
-					TimeUnit.MILLISECONDS.sleep(1000);
-					System.out.println();
-					int menRd = rd.nextInt(3);
-					if (menRd == 0) {
-						System.out.println("멀리 뻗어 펜스 넘어갑니다 !! ");
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
-					} else if (menRd == 1) {
-						System.out.println(" 쳤습니다 !!! ");
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
-					} else if (menRd == 2) {
-						System.out.println(" 쭉쭉 뻗어나갑니다 ! ");
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
-					}
-					score = score + 3;
-					TimeUnit.MILLISECONDS.sleep(1000);
-				
 
-				
-				} else if (taAbil - toAbil <= 70 && taAbil - toAbil > 30) {
+						TimeUnit.SECONDS.sleep(1);
+						System.out.println("< 게임을 시작합니다 >");
 
-					TimeUnit.MILLISECONDS.sleep(1000);
-					System.out.println("쳤습니다 !! 안타 ! + 1점 !");
-					score = score + 1;
-					TimeUnit.MILLISECONDS.sleep(1000);
-					
+						int score = 0;
+						int lose = 0;
+						int num1 = 1;
+						int st = 0;
+						int G = 0;
+						int sum = 0;
+						int powerUp = 1;
+						int speedUp = 2;
+						int concenUp = 3;
 
+						while (true) {
+							if (score < 10) {
 
-				} else if (taAbil - toAbil <= 30) {
-					
-					TimeUnit.MILLISECONDS.sleep(1000);
-					System.out.println("스트라이크!!");
-					st++;
-					TimeUnit.MILLISECONDS.sleep(1000);
-					
+								TimeUnit.SECONDS.sleep(1);
 
-				
-					if (st >= 3) {
-					
-						System.out.println();
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println("투수의 공이 스트라이크 존으로 들어오면서 아웃입니다 !! 게임 종료 !");
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println();
-						System.out.println("누적점수 : " +score);
-						System.out.println("=======================");
-						System.out.println();
+								System.out.println();
 
-						break;
-				}
+								System.out.println(num1++ + "번째 게임입니다 !");
 
-			}
-				System.out.println();
-				System.out.println( "누적점수 : " +score + " 스트라이크 : " + st);
-				System.out.println();
-				System.out.println("=======================");
-				
-				} else if (toAbil > taAbil) {
-					if (toAbil - taAbil >= 70) {
-						System.out.println();
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println("스트라이크!!");
-						st++;
-						System.out.println();
-						TimeUnit.MILLISECONDS.sleep(1000);
-						
-					
-						if (st >= 3) {
-						
-							System.out.println();
-							TimeUnit.MILLISECONDS.sleep(1000);
-							System.out.println("투수의 공이 스트라이크 존으로 들어오면서 아웃입니다 !! 게임 종료 !");
-							System.out.println();
-							TimeUnit.MILLISECONDS.sleep(1000);
-							System.out.println("누적점수 : " +score);
-							System.out.println();
-							System.out.println("=======================");
-							System.out.println();
-							break;
-					}
-					}else if (toAbil - taAbil <= 70 && toAbil - taAbil > 30) {
+								System.out.println();
 
-						System.out.println();
-						TimeUnit.MILLISECONDS.sleep(1000);
-						System.out.println("쳤습니다 !! 안타 ! + 1점 !");
-						score = score + 1;
-						System.out.println();
-						TimeUnit.MILLISECONDS.sleep(1000);
-						
+								TARd = rd.nextInt(5);
+								TORd = rd.nextInt(5);
 
+								TimeUnit.SECONDS.sleep(1);
+								System.out.println("상대 투수는 < " + TO.get(TORd).getName() + " > 입니다");
 
-					} else if (toAbil - taAbil <= 30) {
-						
-						TimeUnit.MILLISECONDS.sleep(100);
-						System.out.print(" !!");
-						TimeUnit.MILLISECONDS.sleep(100);
-						System.out.print("!!");
-						TimeUnit.MILLISECONDS.sleep(100);
-						System.out.print("!!");
-						TimeUnit.MILLISECONDS.sleep(100);
-						System.out.println("!!");
-						TimeUnit.MILLISECONDS.sleep(1000);
-						
-						int menRd = rd.nextInt(3);
-						if (menRd == 0) {
-							System.out.println("멀리 뻗어 펜스 넘어갑니다 !! ");
-							TimeUnit.MILLISECONDS.sleep(1000);
-							System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
-						} else if (menRd == 1) {
-							System.out.println(" 쳤습니다 !!! ");
-							TimeUnit.MILLISECONDS.sleep(1000);
-							System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
-						} else if (menRd == 2) {
-							System.out.println(" 쭉쭉 뻗어나갑니다 ! ");
-							TimeUnit.MILLISECONDS.sleep(1000);
-							System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+								TimeUnit.MILLISECONDS.sleep(500);
+								if (TO.get(TORd).getPower() >= 80) {
+									int menRd = rd.nextInt(3);
+									if (menRd == 0) {
+										System.out.println(" * 상당히 강한 선수들 중에 한명입니다");
+									} else if (menRd == 1) {
+										System.out.println(" * 이 선수 오늘 컨디션이 상당히 좋아보입니다");
+									} else if (menRd == 2) {
+										System.out.println(" * 자신감이 넘치는 모습입니다");
+									}
+								} else if (TO.get(TORd).getPower() <= 20) {
+									int menRd = rd.nextInt(3);
+									if (menRd == 0) {
+										System.out.println(" * 기대에 못미치는 플레이를 선보이는 선수입니다");
+									} else if (menRd == 1) {
+										System.out.println(" * 어딘가 지쳐보이는 건 기분 탓일까요");
+									} else if (menRd == 2) {
+										System.out.println(" * 오늘 컨디션이 좋아보이지는 않습니다...");
+									}
+								}
+
+								System.out.println();
+
+								TimeUnit.SECONDS.sleep(1);
+								System.out.print("이에 맞서는 타자는 ");
+								TimeUnit.MILLISECONDS.sleep(200);
+								System.out.print(".");
+								TimeUnit.MILLISECONDS.sleep(200);
+								System.out.print(".");
+								TimeUnit.MILLISECONDS.sleep(200);
+								System.out.print(".");
+								TimeUnit.MILLISECONDS.sleep(200);
+								System.out.println(" < " + TA.get(TARd).getName() + " > 선수 !");
+
+								if (TA.get(TARd).getPower() >= 80) {
+									int menRd = rd.nextInt(3);
+									if (menRd == 0) {
+										System.out.println(" * 배트에 힘이 잔뜩 들어가 있습니다");
+									} else if (menRd == 1) {
+										System.out.println(" * 한창 상승세를 타고 있는 선수입니다");
+									} else if (menRd == 2) {
+										System.out.println(" * 기대되는 선수입니다");
+									}
+								} else if (TA.get(TARd).getPower() <= 20) {
+									int menRd = rd.nextInt(3);
+									if (menRd == 0) {
+										System.out.println(" * 기대에 못미치는 플레이를 선보이는 선수입니다");
+									} else if (menRd == 1) {
+										System.out.println(" * 어딘가 지쳐보이는 건 기분 탓일까요");
+									} else if (menRd == 2) {
+										System.out.println(" * 오늘 컨디션이 좋아보이지는 않습니다...");
+									}
+								}
+								System.out.println();
+
+								TimeUnit.SECONDS.sleep(1);
+
+								System.out.println("1. 계속 진행    2. 인벤토리 열기 (타자 능력치) ");
+
+								int userAns3 = sc.nextInt();
+
+								while (true) {
+									if (userAns3 == 1) {
+										break;
+									} else if (userAns3 == 2) {
+										System.out.println("1. 파워포션 : (" + powerUp + "/1)" + " 2. 속도포션 : (" + speedUp
+												+ "/2)" + " 3. 집중력포션 : (" + concenUp + "/3)");
+
+										int userAns4 = sc.nextInt();
+
+										if (userAns4 == 1 && powerUp != 0) {
+											System.out.println("파워포션을 사용합니다. 온 몸에 힘이 넘칩니다.");
+											powerUp--;
+											TA.get(TARd).setPower(TA.get(TARd).getPower() + 80);
+											break;
+										} else if (userAns4 == 2 && speedUp != 0) {
+											System.out.println("속도포션을 사용합니다. 몸이 가벼워집니다.");
+											speedUp--;
+											TA.get(TARd).setPower(+50);
+											break;
+										} else if (userAns4 == 3 && concenUp != 0) {
+											System.out.println("집중력포션을 사용합니다. 시간이 느려진 것 같습니다.");
+											TA.get(TARd).setPower(+30);
+											concenUp--;
+											break;
+										} else {
+											System.out.println("잘못 입력하셨습니다. 다시 선택하세요.");
+										}
+
+									}
+								}
+
+								TimeUnit.SECONDS.sleep(1);
+								System.out.println("투수 와인드 - 업");
+								TimeUnit.SECONDS.sleep(1);
+								System.out.println();
+
+								int taAbil = TA.get(TARd).getPower();
+								int toAbil = TO.get(TORd).getPower();
+
+								if (taAbil > toAbil) {
+									if (taAbil - toAbil >= 70) {
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print(" !!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print("!!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print("!!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.println("!!");
+										TimeUnit.MILLISECONDS.sleep(1000);
+										int menRd = rd.nextInt(3);
+										if (menRd == 0) {
+											System.out.println("멀리 뻗어 펜스 넘어갑니다 !! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										} else if (menRd == 1) {
+											System.out.println(" 쳤습니다 !!! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										} else if (menRd == 2) {
+											System.out.println(" 쭉쭉 뻗어나갑니다 ! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										}
+										score = score + 3;
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+									} else if (taAbil - toAbil <= 70 && taAbil - toAbil > 30) {
+
+										TimeUnit.MILLISECONDS.sleep(1000);
+										System.out.println("쳤습니다 !! 안타 ! + 1점 !");
+										score = score + 1;
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+									} else if (taAbil - toAbil <= 30) {
+
+										TimeUnit.MILLISECONDS.sleep(1000);
+										System.out.println("스트라이크!!");
+										st++;
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+										if (st >= 3) {
+
+											System.out.println();
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println("투수의 공이 스트라이크 존으로 들어오면서 아웃입니다 !! 게임 종료 !");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println();
+											System.out.println("누적점수 : " + score);
+											System.out.println("=======================");
+											System.out.println();
+
+											break;
+										}
+
+									}
+									System.out.println();
+									System.out.println("누적점수 : " + score + " 스트라이크 : " + st);
+									System.out.println();
+									System.out.println("=======================");
+
+								} else if (toAbil > taAbil) {
+									if (toAbil - taAbil >= 70) {
+										System.out.println();
+										TimeUnit.MILLISECONDS.sleep(1000);
+										System.out.println("스트라이크!!");
+										st++;
+										System.out.println();
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+										if (st >= 3) {
+
+											System.out.println();
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println("투수의 공이 스트라이크 존으로 들어오면서 아웃입니다 !! 게임 종료 !");
+											System.out.println();
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println("누적점수 : " + score);
+											System.out.println();
+											System.out.println("=======================");
+											System.out.println();
+											break;
+										}
+									} else if (toAbil - taAbil <= 70 && toAbil - taAbil > 30) {
+
+										System.out.println();
+										TimeUnit.MILLISECONDS.sleep(1000);
+										System.out.println("쳤습니다 !! 안타 ! + 1점 !");
+										score = score + 1;
+										System.out.println();
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+									} else if (toAbil - taAbil <= 30) {
+
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print(" !!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print("!!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.print("!!");
+										TimeUnit.MILLISECONDS.sleep(100);
+										System.out.println("!!");
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+										int menRd = rd.nextInt(3);
+										if (menRd == 0) {
+											System.out.println("멀리 뻗어 펜스 넘어갑니다 !! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										} else if (menRd == 1) {
+											System.out.println(" 쳤습니다 !!! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										} else if (menRd == 2) {
+											System.out.println(" 쭉쭉 뻗어나갑니다 ! ");
+											TimeUnit.MILLISECONDS.sleep(1000);
+											System.out.println(" <<< 홈런 !! >>> + 3점 획득합니다!!");
+										}
+										score = score + 3;
+										TimeUnit.MILLISECONDS.sleep(1000);
+
+									}
+
+									System.out.println();
+									System.out.println("누적점수 : " + score + " 스트라이크 : " + ++st);
+									System.out.println();
+									System.out.println("=======================");
+								}
+
+							} else if (score >= 10) {
+
+								if (score >= 10) {
+
+									System.out.println("종료");
+									System.out.println();
+									System.out.println("누적점수 : " + score);
+									System.out.println();
+									System.out.println("=======================");
+									System.out.println();
+
+									break;
+
+								}
+							}
 						}
-						score = score + 3;
-						TimeUnit.MILLISECONDS.sleep(1000);
-						
-					
+
+						sum += score;
+						mdto = dao.score(id, sum);
+
+					} catch (Exception e) {
+						System.out.println(e);
 					}
 
-					System.out.println();
-					System.out.println( "누적점수 : " +score + " 스트라이크 : " + ++st);
-					System.out.println();
-					System.out.println("=======================");
-				}
-					
-				
-			
-			} else if (score >= 10) {
-				
-				if (score >= 10) {
-			
-				System.out.println("종료");
-				System.out.println();
-				System.out.println("누적점수 : " +score);
-				System.out.println();
-				System.out.println("=======================");
-				System.out.println();
-
-				break;
-				
-	
-				
-	
-		}
-	}
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-		
-		
-				}else {
-					System.out.println("Login fail");
+				} else {
+					System.out.println("로그인 실패, 다시 시도하세요.");
 				}
 			} else if (input == 3) {/*************** 검색 ****************/
-				System.out.println("검색할 ID : ");
-				String id = sc.next();
-				BBDTO dto = dao.selectOne(id);
-			
-				if (dto != null) {
-					System.out.println("select Success");
-				}else {
-					System.out.println("select fail");
-				}
-				
-			} else {
 				System.out.println("프로그램을 종료합니다.");
 				break;
-			}//else
+			} // else
 		} // while
-		
-		
-		
-}
+
+	}
 }

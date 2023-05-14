@@ -113,8 +113,8 @@ public class BBDAO {
 			// rs.next();
 			while (rs.next()) {
 				String s_id = rs.getString("id"); // getString() 메소드의 매개변수눈 index도 가능, 컬럼명도 가능
-
-				mdto = new BBDTO(s_id);
+				int s_scr = rs.getInt(3);
+				mdto = new BBDTO(s_id, s_scr);
 				dtoList.add(mdto);
 				// System.out.println(s_id + "/" + s_pw + "/" + s_name + "/" + s_age + "/" );
 			} // while
@@ -152,7 +152,7 @@ public class BBDAO {
 	public BBDTO score(String id, int ran) {
 		getConn();
 		String sql = "UPDATE MEMBER_INFO_BB SET SCORE = SCORE + ? WHERE ID = ?";
-	    String sql3 = "SELECT ID, SCORE, ROWNUM AS RANKING FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
+//	    String sql3 = "SELECT ID, SCORE, ROWNUM AS RANKING FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
 	    int row = 0;
 	    BBDTO mdto = null;
 	    try {
@@ -163,15 +163,15 @@ public class BBDAO {
 	        row = psmt.executeUpdate();    
 
 	        // 순위 쿼리 실행
-	        psmt = conn.prepareStatement(sql3);
-	        ResultSet rs = psmt.executeQuery();
-	        while (rs.next()) {
-	            int s_id = rs.getInt(1);
-	            int score = rs.getInt("SCORE");
-	            int ranking = rs.getInt("RANKING");
-	            mdto = new BBDTO(id, ran);
-	            System.out.println(s_id + "님의 점수는 " + score + "점이며, 순위는 " + ranking + "위입니다.");
-	        }
+//	        psmt = conn.prepareStatement(sql3);
+//	        ResultSet rs = psmt.executeQuery();
+//	        while (rs.next()) {
+//	            int s_id = rs.getInt(1);
+//	            int score = rs.getInt("SCORE");
+//	            int ranking = rs.getInt("RANKING");
+//	            mdto = new BBDTO(id, ran);
+//	            System.out.println(s_id + "님의 점수는 " + score + "점이며, 순위는 " + ranking + "위입니다.");
+//	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    } finally {
