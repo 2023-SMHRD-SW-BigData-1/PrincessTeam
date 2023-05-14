@@ -21,7 +21,7 @@ public class gameMain {
 		ArrayList<playerDTO> player = new ArrayList<>();
 		ArrayList<playerDTO> TA = new ArrayList<>();
 		ArrayList<playerDTO> TO = new ArrayList<>();
-
+		/*수정*/
 		player.add(new playerDTO("*김태경*", 1));
 		player.add(new playerDTO("*개복치*", 2));
 		player.add(new playerDTO("*잉어킹*", 3));
