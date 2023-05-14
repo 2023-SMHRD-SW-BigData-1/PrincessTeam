@@ -24,10 +24,19 @@ public class BBDTO {
 		super();
 		this.id = id;
 	}
+	public BBDTO(int ran) {
+		super();
+		this.ran = ran;
+	}
 	public BBDTO(String id, String pw) {
 		super();
 		this.id = id;
 		this.pw = pw;
+	}
+	public BBDTO(String id, int ran) {
+		super();
+		this.id = id;
+		this.ran = ran;
 	}
 	
 	

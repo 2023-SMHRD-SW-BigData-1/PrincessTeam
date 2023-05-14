@@ -209,7 +209,6 @@ public class TgameMain {
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
 		
-		ArrayList<GameDTO> toList = yedao.selectAllMember();
 
 		System.out.println();
 		
