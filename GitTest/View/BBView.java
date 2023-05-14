@@ -54,7 +54,7 @@ public class BBView {
 				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
 				);
 		System.out.println("====순위====");
-		System.out.println("ID"+"\t"+"랭킹"); 
+		System.out.println("ID"+"\t"+"SCORE"); 
 		
 		ArrayList<BBDTO> dtoList = dao.selectAllMember();
 		for (int i = 0; i < dtoList.size(); i++) {
@@ -62,7 +62,9 @@ public class BBView {
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
 		ArrayList<GameDTO> yedtoList = yedao.selectAllMember();
-
+		
+		
+		
 		System.out.println();
 		
 		while (true) {

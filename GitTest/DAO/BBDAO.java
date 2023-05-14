@@ -128,6 +128,7 @@ public class BBDAO {
 	}// selectAllMember
 
 	/*---------------------------------3랭킹메소드 끝------------------------------*/
+	
 	/*---------------------------------3삭제 시작------------------------------*/
 
 	public int deleteMember(String id) {
@@ -147,6 +148,41 @@ public class BBDAO {
 		return row;
 	}// deleteMember
 	/*---------------------------------3삭제 끝------------------------------*/
+	/*---------------------------------4누적 랭킹 시작------------------------------*/
+	public BBDTO score(String id, int ran) {
+		getConn();
+		String sql = "UPDATE MEMBER_INFO_BB SET SCORE = SCORE + ? WHERE ID = ?";
+	    String sql3 = "SELECT ID, SCORE, ROWNUM AS RANKING FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
+	    int row = 0;
+	    BBDTO mdto = null;
+	    try {
+	        // Update 쿼리 실행
+	        psmt = conn.prepareStatement(sql);
+	        psmt.setInt(1, ran);
+	        psmt.setString(2, id);
+	        row = psmt.executeUpdate();    
+
+	        // 순위 쿼리 실행
+	        psmt = conn.prepareStatement(sql3);
+	        ResultSet rs = psmt.executeQuery();
+	        while (rs.next()) {
+	            int s_id = rs.getInt(1);
+	            int score = rs.getInt("SCORE");
+	            int ranking = rs.getInt("RANKING");
+	            mdto = new BBDTO(id, ran);
+	            System.out.println(s_id + "님의 점수는 " + score + "점이며, 순위는 " + ranking + "위입니다.");
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        getClose();
+	    }
+	    return mdto;
+	}
+	
+	
+	
+	/*---------------------------------4누적 랭킹 끝------------------------------*/
 	/*---------------------------------4검색 시작------------------------------*/
 	public BBDTO selectOne (String id) {
 		String sql = "SELECT * FROM MEMBER_INFO_BB WHERE ID = ?";
@@ -171,4 +207,9 @@ public class BBDAO {
 	} //selectOne
 	/*---------------------------------4검색 끝------------------------------*/
 //rs랑 반복문이랑 뭐가 다른지 모르겠음
+
+	public void updateRank(String id, int rank) {
+		// TODO Auto-generated method stub
+		
+	}
 }// class

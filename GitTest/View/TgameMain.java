@@ -204,12 +204,16 @@ public class TgameMain {
 		System.out.println("ID"+"\t"+"랭킹"); 
 		
 		ArrayList<BBDTO> dtoList = dao.selectAllMember();
+		int totalRan = 0;
 		for (int i = 0; i < dtoList.size(); i++) {
 			System.out.println
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
+		for (int i = 0; i < dtoList.size(); i++) {
+		    int rank = (int) Math.ceil((double) dtoList.get(i).getRan() / totalRan * 100);
+		    dao.updateRank(dtoList.get(i).getId(), rank);
+		}
 		
-		ArrayList<GameDTO> toList = yedao.selectAllMember();
 
 		System.out.println();
 		
@@ -327,7 +331,7 @@ public class TgameMain {
 		int num1 = 1;
 		int st = 0;
 		int G = 0;
-		
+		int sum = 0;
 		while (true) {
 			if( score < 10) {
 				
@@ -545,7 +549,7 @@ public class TgameMain {
 						
 					
 					}
-
+					
 					System.out.println();
 					System.out.println( "누적점수 : " +score + " 스트라이크 : " + ++st);
 					System.out.println();
@@ -570,10 +574,12 @@ public class TgameMain {
 	
 				
 	
-		}
-	}
-		}
+		}//if
+	}//else if
+		}//while
+		    sum += score;
 		
+		   mdto= dao.score(id, sum);
 		
 		
 		
