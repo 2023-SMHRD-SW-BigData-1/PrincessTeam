@@ -234,7 +234,8 @@ public class TgameMain {
 				+ "$!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!$\r\n"
 				+ "");
 		System.out.println("=============순위=============");
-		System.out.println("순위" + "\t" + "ID" + "\t\t" + "랭킹");
+		System.out.println("순위" + "\t" + "ID" + "\t\t" + "점수");
+		System.out.println("=============================");
 
 		ArrayList<BBDTO> dtoList = dao.selectAllMember();
 		for (int i = 0; i < dtoList.size(); i++) {
@@ -293,7 +294,7 @@ public class TgameMain {
 					try {
 						System.out.println();
 						TimeUnit.SECONDS.sleep(1);
-						System.out.println(id + " 님, 레트로 야구 게임의 세게에 오신 것을 환영합니다 !! ");
+						System.out.println(id + " 님, 레트로 야구 게임의 세계에 오신 것을 환영합니다 !! ");
 						System.out.println();
 
 						TimeUnit.SECONDS.sleep(1);
@@ -303,7 +304,7 @@ public class TgameMain {
 
 						TimeUnit.SECONDS.sleep(1);
 
-						System.out.println("당신의 운을 시험하세요! 선수 뽑는 중...");
+						System.out.println("선수 뽑는 중...");
 						System.out.println();
 
 						TimeUnit.SECONDS.sleep(1);
