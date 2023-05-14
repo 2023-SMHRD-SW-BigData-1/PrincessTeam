@@ -123,7 +123,7 @@ public class gameMain {
 		player.add(new playerDTO("정세연", 99));
 		player.add(new playerDTO("본부장", 100));
 
-		// 타자 선발
+		// 타자 선발 ㄴ
 		while (cnt < 5) {
 			for (int i = 0; i < 5; i++) {
 				num = rd.nextInt(player.size() - i);
