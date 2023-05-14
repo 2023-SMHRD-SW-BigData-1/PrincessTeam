@@ -54,7 +54,7 @@ public class BBView {
 				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
 				);
 		System.out.println("====순위====");
-		System.out.println("ID"+"\t"+"랭킹");
+		System.out.println("ID"+"\t"+"랭킹"); 
 		
 		ArrayList<BBDTO> dtoList = dao.selectAllMember();
 		for (int i = 0; i < dtoList.size(); i++) {
