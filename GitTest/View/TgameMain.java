@@ -327,6 +327,9 @@ public class TgameMain {
 		int num1 = 1;
 		int st = 0;
 		int G = 0;
+		int powerUp = 1;
+		int speedUp = 2;
+		int concenUp = 3;
 		
 		while (true) {
 			if( score < 10) {
@@ -401,6 +404,44 @@ public class TgameMain {
 					}
 				}
 				System.out.println();
+				
+				
+				
+					
+
+					System.out.println("1. 계속 진행    2. 인벤토리 열기 (타자 능력치) ");
+				
+				int userAns3 = sc.nextInt();
+				
+				while(true) {
+					if (userAns3 == 1) {
+						break;
+					}else if( userAns3 == 2) {
+						System.out.println("1. 파워포션 : (" + powerUp + "/1)" + " 2. 속도포션 : (" + speedUp + "/2)" + " 3. 집중력포션 : (" + concenUp + "/3)");
+					
+						int userAns4 = sc.nextInt();
+						
+						if (userAns4 == 1 && powerUp != 0) {
+							System.out.println("파워포션을 사용합니다. 온 몸에 힘이 넘칩니다.");
+							powerUp--;
+							TA.get(TARd).setPower(TA.get(TARd).getPower()+80);
+							break;
+						} else if ( userAns4 == 2 && speedUp != 0) {
+							System.out.println("속도포션을 사용합니다. 몸이 가벼워집니다.");
+							speedUp--;
+							TA.get(TARd).setPower(+50);
+							break;
+						} else if (userAns4 == 3 && concenUp != 0) {
+							System.out.println("집중력포션을 사용합니다. 시간이 느려진 것 같습니다.");
+							TA.get(TARd).setPower(+30);
+							concenUp--;
+							break;
+						} else {
+							System.out.println("잘못 입력하셨습니다. 다시 선택하세요.");
+						}
+				
+				}
+				}
 				
 				TimeUnit.SECONDS.sleep(1);
 				System.out.println("투수 와인드 - 업");
