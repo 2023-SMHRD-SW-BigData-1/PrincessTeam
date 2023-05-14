@@ -7,11 +7,13 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import DAO.BBDAO;
+import DAO.GameDAO;
 import DTO.BBDTO;
+import DTO.GameDTO;
 import DTO.playerDTO;
 
 
-public class gameMain {
+public class TgameMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -159,9 +161,9 @@ public class gameMain {
 //			System.out.println(to.getName() + "\t" + to.getPower());
 //		}
 
-		
-		
 		BBDAO dao = new BBDAO();
+		GameDAO yedao = new GameDAO();
+		
 		System.out.println("'공'주는 야구 공주팀" );
 		System.out.println("\r\n"
 				+ "⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛\r\n"
@@ -206,6 +208,8 @@ public class gameMain {
 			System.out.println
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
+		
+		ArrayList<GameDTO> toList = yedao.selectAllMember();
 
 		System.out.println();
 		
@@ -258,28 +262,11 @@ public class gameMain {
 				if (mdto != null) {
 					System.out.println("Login Success");
 					
-					System.out.println("123");
 					
 					
-				}else {
-					System.out.println("Login fail");
-				}
-			} else if (input == 3) {/*************** 검색 ****************/
-				System.out.println("검색할 ID : ");
-				String id = sc.next();
-				BBDTO dto = dao.selectOne(id);
-			
-				if (dto != null) {
-					System.out.println("select Success");
-				}else {
-					System.out.println("select fail");
-				}
+					
+					
 				
-			} else {
-				System.out.println("프로그램을 종료합니다.");
-				break;
-			}//else
-		} // while
 		
 		
 		
@@ -599,5 +586,29 @@ public class gameMain {
 			System.out.println(e);
 		}
 
+		
+		
+				}else {
+					System.out.println("Login fail");
+				}
+			} else if (input == 3) {/*************** 검색 ****************/
+				System.out.println("검색할 ID : ");
+				String id = sc.next();
+				BBDTO dto = dao.selectOne(id);
+			
+				if (dto != null) {
+					System.out.println("select Success");
+				}else {
+					System.out.println("select fail");
+				}
+				
+			} else {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			}//else
+		} // while
+		
+		
+		
 }
 }
