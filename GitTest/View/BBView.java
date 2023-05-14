@@ -64,7 +64,7 @@ public class BBView {
 			System.out.println
 			(dtoList.get(i).getId() + "\t" + dtoList.get(i).getRan());
 			}
-		ArrayList<GameDTO> toList = yedao.selectAllMember();
+		ArrayList<GameDTO> yedtoList = yedao.selectAllMember();
 
 		System.out.println();
 		
