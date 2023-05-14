@@ -10,6 +10,15 @@ public class BBDTO {
 //	age
 	private int ran;
 	
+	public int getRn() {
+		return rn;
+	}
+
+	public void setRn(int rn) {
+		this.rn = rn;
+	}
+
+	private int rn;
 //	2. 생성자, 메소드
 	
 	
@@ -20,6 +29,14 @@ public class BBDTO {
 		this.pw = pw;
 		this.ran = ran;
 	}
+	
+	public BBDTO(int ran, String id, int scr) {
+		super();
+		this.rn = ran;
+		this.id = id;
+		this.ran = scr;
+	}
+	
 	public BBDTO(String id) {
 		super();
 		this.id = id;

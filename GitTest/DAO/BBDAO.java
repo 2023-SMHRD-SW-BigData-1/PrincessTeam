@@ -103,7 +103,10 @@ public class BBDAO {
 	/*---------------------------------2로그인메소드 끝------------------------------*/
 	/*---------------------------------3랭킹메소드 시작------------------------------*/
 	public ArrayList<BBDTO> selectAllMember() {
-		String sql = "SELECT * FROM MEMBER_INFO_BB";
+
+//		String sql = "SELECT * FROM MEMBER_INFO_BB";
+	    String sql = "SELECT ROWNUM AS RANKING, ID, SCORE FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
+
 		BBDTO mdto = null;
 		ArrayList<BBDTO> dtoList = new ArrayList<>();
 		getConn();
@@ -112,9 +115,10 @@ public class BBDAO {
 			rs = psmt.executeQuery();
 			// rs.next();
 			while (rs.next()) {
-				String s_id = rs.getString("id"); // getString() 메소드의 매개변수눈 index도 가능, 컬럼명도 가능
+				int s_rn = rs.getInt(1);
+				String s_id = rs.getString(2); // getString() 메소드의 매개변수눈 index도 가능, 컬럼명도 가능
 				int s_scr = rs.getInt(3);
-				mdto = new BBDTO(s_id, s_scr);
+				mdto = new BBDTO(s_rn, s_id, s_scr);
 				dtoList.add(mdto);
 				// System.out.println(s_id + "/" + s_pw + "/" + s_name + "/" + s_age + "/" );
 			} // while
@@ -152,7 +156,7 @@ public class BBDAO {
 	public BBDTO score(String id, int ran) {
 		getConn();
 		String sql = "UPDATE MEMBER_INFO_BB SET SCORE = SCORE + ? WHERE ID = ?";
-//	    String sql3 = "SELECT ID, SCORE, ROWNUM AS RANKING FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
+//	    String sql3 = "SELECT ROWNUM AS RANKING, ID, SCORE FROM ( SELECT ID, SCORE FROM MEMBER_INFO_BB ORDER BY SCORE DESC) WHERE ROWNUM <=10";        
 	    int row = 0;
 	    BBDTO mdto = null;
 	    try {
@@ -166,11 +170,10 @@ public class BBDAO {
 //	        psmt = conn.prepareStatement(sql3);
 //	        ResultSet rs = psmt.executeQuery();
 //	        while (rs.next()) {
-//	            int s_id = rs.getInt(1);
-//	            int score = rs.getInt("SCORE");
-//	            int ranking = rs.getInt("RANKING");
-//	            mdto = new BBDTO(id, ran);
-//	            System.out.println(s_id + "님의 점수는 " + score + "점이며, 순위는 " + ranking + "위입니다.");
+//	        	
+//	            String s_id = rs.getString(1);
+//	            int score = rs.getInt(2);
+//	            mdto = new BBDTO(s_id, score);
 //	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
