@@ -44,7 +44,7 @@ public class BBDAO {
 			if (conn != null)
 				conn.close();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); //오류를 안보이게하는 문장
 		} // catch
 	}// getClose();
 	/*-------------getClose메소드 시작----------------------*/
@@ -52,15 +52,12 @@ public class BBDAO {
 //	메소트 형태로 코드 작성
 	
 	public void create() {
-		
-
 		try {
 			getConn();
 			// 3. sql문 준비
 			// 회원가입 >> member_info 테이블에 데이터 추가
 				
 			String sql = "CREATE TABLE MEMBER_INFO_BB (ID VARCHAR2(200) NOT NULL, PW VARCHAR2(200) NOT NULL, SCORE NUMBER(8))";
-			
 			pst = conn.createStatement();
 			// 4. SQL문 전송(실행)
 			/* 전송하기전 sql문을 담아서 전송할 수 있는 형식으로 변경 */
@@ -98,12 +95,12 @@ public class BBDAO {
 			/* 전송하기전 sql문을 담아서 전송할 수 있는 형식으로 변경 */
 
 			psmt.setString(1, mdto.getId());
+			
 			psmt.setString(2, mdto.getPw());
 			psmt.setInt(3, mdto.getRan());
 
 			row = psmt.executeUpdate(); // 쿼리
 		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
 			getClose();
 		} // finally
