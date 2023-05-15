@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import DTO.BBDTO;
@@ -13,6 +14,7 @@ public class BBDAO {
 	// 공통필드 //close에서도쓸거니까
 	Connection conn = null;
 	PreparedStatement psmt = null;
+	Statement pst = null;
 	ResultSet rs = null;
 
 // DB연결 메소드
@@ -39,6 +41,8 @@ public class BBDAO {
 		try {
 			if (psmt != null) /* 열렸다면~ */
 				psmt.close();/* ~ 그때 닫겠다 */
+			if (pst != null) /* 열렸다면~ */
+				pst.close();/* ~ 그때 닫겠다 */
 			if (conn != null)
 				conn.close();
 		} catch (SQLException e) {
@@ -48,6 +52,29 @@ public class BBDAO {
 	/*-------------getClose메소드 시작----------------------*/
 
 //	메소트 형태로 코드 작성
+	
+	public boolean create() {
+		boolean row = false;
+		try {
+			getConn();
+			// 3. sql문 준비
+			// 회원가입 >> member_info 테이블에 데이터 추가
+			String sql = "CREATE TABLE MEMBER_INFO_BB (ID VARCHAR2(200) NOT NULL, PW VARCHAR2(200) NOT NULL, SCORE NUMBER(8))";
+			// 4. SQL문 전송(실행)
+			pst = conn.createStatement();
+			/* 전송하기전 sql문을 담아서 전송할 수 있는 형식으로 변경 */
+
+
+			row = pst.execute(sql); // 쿼리
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		} // finally
+		return row;
+	}
+	
+	
 	/*---------------------------------1회원가입메소드 시작------------------------------*/
 //	회원가입 메소드
 	public int join(BBDTO mdto) {
