@@ -41,8 +41,6 @@ public class BBDAO {
 		try {
 			if (psmt != null) /* 열렸다면~ */
 				psmt.close();/* ~ 그때 닫겠다 */
-			if (pst != null) /* 열렸다면~ */
-				pst.close();/* ~ 그때 닫겠다 */
 			if (conn != null)
 				conn.close();
 		} catch (SQLException e) {
@@ -53,25 +51,35 @@ public class BBDAO {
 
 //	메소트 형태로 코드 작성
 	
-	public boolean create() {
-		boolean row = false;
+	public void create() {
+		
+
 		try {
 			getConn();
 			// 3. sql문 준비
 			// 회원가입 >> member_info 테이블에 데이터 추가
+				
 			String sql = "CREATE TABLE MEMBER_INFO_BB (ID VARCHAR2(200) NOT NULL, PW VARCHAR2(200) NOT NULL, SCORE NUMBER(8))";
-			// 4. SQL문 전송(실행)
+			
 			pst = conn.createStatement();
+			// 4. SQL문 전송(실행)
 			/* 전송하기전 sql문을 담아서 전송할 수 있는 형식으로 변경 */
 
-
-			row = pst.execute(sql); // 쿼리
+			pst.execute(sql); // 쿼리
+			
+			 
+			 
 		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
-			getClose();
+			try {
+				if (pst != null) /* 열렸다면~ */
+					pst.close();/* ~ 그때 닫겠다 */
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		} // finally
-		return row;
 	}
 	
 	
