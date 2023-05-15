@@ -557,7 +557,7 @@ public class TgameMain {
 								int toAbil = TO.get(TORd).getPower();
 
 								if (taAbil > toAbil) {
-									if (taAbil - toAbil >= 70) {
+									if (taAbil - toAbil > 70) {
 										TimeUnit.MILLISECONDS.sleep(100);
 										System.out.print(" !!");
 										TimeUnit.MILLISECONDS.sleep(100);
@@ -619,7 +619,7 @@ public class TgameMain {
 									System.out.println("=======================");
 
 								} else if (toAbil > taAbil) {
-									if (toAbil - taAbil >= 70) {
+									if (toAbil - taAbil > 70) {
 										System.out.println();
 										TimeUnit.MILLISECONDS.sleep(1000);
 										System.out.println("스트라이크!!");
