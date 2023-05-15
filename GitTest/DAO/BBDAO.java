@@ -14,6 +14,7 @@ public class BBDAO {
 	// 공통필드 //close에서도쓸거니까
 	Connection conn = null;
 	PreparedStatement psmt = null;
+	PreparedStatement psmt2 = null;
 	Statement pst = null;
 	ResultSet rs = null;
 
@@ -85,23 +86,35 @@ public class BBDAO {
 	
 	/*---------------------------------1회원가입메소드 시작------------------------------*/
 //	회원가입 메소드
-	public int join(BBDTO mdto) {
+	public int join(String id, String pw) {
 		int row = 0;
 
 		try {
 			getConn();
 			// 3. sql문 준비
 			// 회원가입 >> member_info 테이블에 데이터 추가
-			String sql = "INSERT INTO MEMBER_INFO_BB VALUES(?,?,?)";
+			String sql = "SELECT COUNT(*) FROM MEMBER_INFO_BB WHERE ID = ?";
+			String sql2 = "INSERT INTO MEMBER_INFO_BB VALUES(?,?,?)";
 			// 4. SQL문 전송(실행)
 			psmt = conn.prepareStatement(sql);
+			psmt2 = conn.prepareStatement(sql2);
 			/* 전송하기전 sql문을 담아서 전송할 수 있는 형식으로 변경 */
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			rs.next();
+            int count = rs.getInt(1);
+//			String count = rs.getString(1);
+			
+				if (count == 0) {
 
-			psmt.setString(1, mdto.getId());
-			psmt.setString(2, mdto.getPw());
-			psmt.setInt(3, mdto.getRan());
+            	psmt2.setString(1, id);
+            	psmt2.setString(2, pw);
+            	psmt2.setInt(3, 0);
+            	row = psmt2.executeUpdate(); // 쿼리
 
-			row = psmt.executeUpdate(); // 쿼리
+            } else {
+            }
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

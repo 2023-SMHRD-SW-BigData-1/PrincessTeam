@@ -355,15 +355,15 @@ public class TgameMain {
 				String pw = sc.next();
 
 				// DAO에 있는 join을 불러오기 위한 메소드 사용
-				BBDTO mdto = new BBDTO(id, pw);
-				int row = dao.join(mdto);
+//				BBDTO mdto = new BBDTO(id, pw);
+				int row = dao.join(id, pw);
 
 				if (row > 0) {
 					System.out.println("회원 가입을 축하드립니다 !");
 				} else {
 					System.out.println("회원가입에 실패했습니다.");
 				} // else
-
+				
 			} else if (input == 2) {/*************** 로그인 ****************/
 				// 1. 사용자로부터 ID,PW 입력받기
 				System.out.print("로그인 ID : ");
